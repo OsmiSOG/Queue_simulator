@@ -1,4 +1,4 @@
-require '../models/cahs_register'
+require_relative 'cash_register'
 class Queue
     def initialize
         @clients = []
