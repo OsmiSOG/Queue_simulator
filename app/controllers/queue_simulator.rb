@@ -7,9 +7,11 @@ class QueueSimulator
         @delta_t
         @market = Market.new
         @iterations
+        @num_cash_register
     end
     def run
         get_data
+        @market.create_cash_register(@num_cash_register, @type_simulation)
     end
     def define_clients
     end
@@ -21,6 +23,7 @@ class QueueSimulator
        get_type_simulation
        get_iterations
        get_delta_t
+       get_n_cash_register
     end
     protected
     def get_type_simulation
@@ -43,5 +46,9 @@ class QueueSimulator
     def get_delta_t
         puts 'ingrese el delta de tiempo deseado para cada iteracion en segundos'
         @delta_t = gets.chomp.to_i
+    end
+    def get_n_cash_register
+        puts 'ingrese la cantidad de cajas registradoras'
+        @num_cash_register = gets.chomp.to_i
     end
 end
