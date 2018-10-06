@@ -8,12 +8,27 @@ class QueueSimulator
         @market = Market.new
         @iterations
         @num_cash_register
+        @counter = 0
+        @num_clients_pm
+        @ramdom_clients
     end
     def run
         get_data
         @market.create_cash_register(@num_cash_register, @type_simulation)
     end
     def define_clients
+        if @counter == 0
+            @ramdom_clients = rand(5)
+            @num_clients_pm = rand(@ramdom_clients)
+            @ramdom_clients -= @num_clients_pm
+        elsif @counter == 1
+            @num_clients_pm = rand(@ramdom_clients)
+            @ramdom_clients -= @num_clients_pm
+        elsif @counter == 2
+            @num_clients_pm = @ramdom_clients
+            @ramdom_clients = 0
+            @counter = 0
+        end
     end
     def enter_clients
     end
