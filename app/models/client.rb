@@ -1,6 +1,11 @@
 class Client
     def initialize
-        @time_stay
+        @wait_time
         @name
+        @time_cahs_register
+    end
+    def choose_queue
+    end
+    def enter
     end
 end
