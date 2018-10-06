@@ -1,2 +1,2 @@
-# row_simulator
-Row simulator as a project for CodumAcademy
+# Queue_simulator
+Queue simulator as a project for CodumAcademy
