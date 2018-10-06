@@ -1,5 +1,5 @@
-require_relative './cahs_register'
-require_relative './queue'
+require_relative 'cash_register'
+require_relative 'queue'
 class Market
     def initialize
         @cahs_register = []
