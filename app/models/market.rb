@@ -21,7 +21,6 @@ class Market
       for i in 0..num_clients-1 do
         client = Client.new
         client.choose_queue(@queues).add(client)
-        @clients[i] = client
       end
     end
 
