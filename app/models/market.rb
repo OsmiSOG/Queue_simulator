@@ -20,8 +20,8 @@ class Market
     def enter_clients(num_clients)
       for i in 0..num_clients-1 do
         client = Client.new
+        client.choose_queue(@queues).add(client)
         @clients[i] = client
-        queue_short(client)
       end
     end
 
@@ -44,16 +44,6 @@ class Market
         for i in (0..n - 1) do
             @cash_register[i] = CashRegister.new(@queues[0])
         end
-    end
-
-    def queue_short(client)
-      shorter_queue = @queues.first
-      @queues.each do |queue|
-        if queue.num_clients < shorter_queue.num_clients
-          shorter_queue = queue
-        end
-      end
-      shorter_queue.add(client)
     end
 
 end

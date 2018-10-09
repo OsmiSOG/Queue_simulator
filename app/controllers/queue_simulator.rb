@@ -21,6 +21,13 @@ class QueueSimulator
         @market.enter_clients(@num_clients_pm)
     end
 
+    def get_data
+      get_type_simulation
+      get_n_cash_register
+      get_iterations
+      get_delta_t
+    end
+    
     def define_clients
         if @counter == 0
             @ramdom_clients = rand(5)
@@ -41,12 +48,6 @@ class QueueSimulator
     def delay
     end
 
-    def get_data
-       get_type_simulation
-       get_n_cash_register
-       get_iterations
-       get_delta_t
-    end
 
     protected
     def get_type_simulation
