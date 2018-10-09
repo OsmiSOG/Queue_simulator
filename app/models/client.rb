@@ -4,8 +4,10 @@ class Client
         @name
         @time_cahs_register
     end
+
     def choose_queue
     end
+
     def enter
     end
 end
