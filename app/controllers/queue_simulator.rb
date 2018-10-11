@@ -46,6 +46,7 @@ class QueueSimulator
     end
 
     def delay
+      sleep(@delta_t)
     end
 
 
