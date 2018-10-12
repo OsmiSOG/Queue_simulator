@@ -5,7 +5,8 @@ class Client
   def initialize
     @wait_time
     @name
-    @time_cahs_register
+    @time_cash_register
+    define_time_cash_register
   end
 
   def choose_queue(queues)
@@ -19,5 +20,18 @@ class Client
   def assign_name
     letters = %w[a b d e f g h i j k l m n o p r s t u v x y z]
     @name = letters[rand(letters.size)]
+  end
+
+  def sum_wait_time
+    @wait_time += 1
+  end
+
+  def subtraction_time_cash_register
+    @time_cash_register -= 1
+  end
+
+  private
+  def define_time_cash_register
+    @time_cash_register = rand(4..25)
   end
 end

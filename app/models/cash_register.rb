@@ -5,7 +5,7 @@ class CashRegister
         @queue
     end
 
-    def next
+    def next_client
     end
 
     def next_iteration
