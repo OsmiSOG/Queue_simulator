@@ -1,7 +1,7 @@
 require_relative 'queue'
 
 class Client
-  attr_accessor :name
+  attr_accessor :name, :time_cash_register
   def initialize
     @wait_time
     @name

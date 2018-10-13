@@ -21,9 +21,8 @@ class Market
       client = Client.new
       client.choose_queue(@queues).add(client)
     end
+    client_to_cash_register
   end
-
-  def next; end
 
   def next_iteration; end
 
@@ -41,5 +40,8 @@ class Market
     for i in (0..n - 1) do
       @cash_register[i] = CashRegister.new(@queues[0])
     end
+  end
+
+  def client_to_cash_register
   end
 end
