@@ -1,18 +1,13 @@
 
 class CashRegister
+  attr_accessor :client
     def initialize(queue)
         @client
         @queue = queue
     end
 
     def next_client
-      if @client != nil
-        if @client.time_cash_register == 0
-          @client = @queue.remove
-        else
-          @client.subtraction_time_cash_register
-        end
-      else
+      if @queue.num_clients > 0
         @client = @queue.remove
       end
     end
