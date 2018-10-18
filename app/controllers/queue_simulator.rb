@@ -18,6 +18,7 @@ class QueueSimulator
     @market.create_cash_register(@num_cash_register, @type_simulation)
     define_clients
     @market.enter_clients(@num_clients_pm)
+    @market.next_iteration
   end
 
   def get_data

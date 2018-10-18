@@ -13,5 +13,6 @@ class CashRegister
     end
 
     def next_iteration
+      
     end
 end

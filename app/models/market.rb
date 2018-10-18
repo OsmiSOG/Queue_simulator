@@ -25,7 +25,14 @@ class Market
     client_to_cash_register
   end
 
-  def next_iteration; end
+  def next_iteration
+    @queues.each do |queue|
+      queue.clients.each do |client|
+        client.sum_wait_time
+      end
+    end
+    @cash_register.next_iteration
+  end
 
   protected
 

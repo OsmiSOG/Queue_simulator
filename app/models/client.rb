@@ -3,7 +3,7 @@ require_relative 'queue'
 class Client
   attr_accessor :name, :time_cash_register
   def initialize
-    @wait_time
+    @wait_time = 0
     @name
     @time_cash_register
     assign_name
