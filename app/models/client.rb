@@ -1,11 +1,13 @@
 require_relative 'queue'
 
 class Client
-  attr_accessor :name
+  attr_accessor :name, :time_cash_register
   def initialize
     @wait_time
     @name
-    @time_cahs_register
+    @time_cash_register
+    assign_name
+    define_time_cash_register
   end
 
   def choose_queue(queues)
@@ -16,8 +18,22 @@ class Client
     shorter_queue
   end
 
+
+  def sum_wait_time
+    @wait_time += 1
+  end
+
+  def subtraction_time_cash_register
+    @time_cash_register -= 1
+  end
+
+  private
   def assign_name
     letters = %w[a b d e f g h i j k l m n o p r s t u v x y z]
     @name = letters[rand(letters.size)]
+  end
+
+  def define_time_cash_register
+    @time_cash_register = rand(4..25)
   end
 end
