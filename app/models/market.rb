@@ -31,7 +31,9 @@ class Market
         client.sum_wait_time
       end
     end
-    @cash_register.next_iteration
+    @cash_register.each do |cash|
+      cash.next_iteration
+    end
   end
 
   protected
