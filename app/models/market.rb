@@ -19,13 +19,21 @@ class Market
   def enter_clients(num_clients)
     for i in 0..num_clients - 1 do
       client = Client.new
-      @clients.push(client)
       client.choose_queue(@queues).add(client)
     end
     client_to_cash_register
   end
 
-  def next_iteration; end
+  def next_iteration
+    @queues.each do |queue|
+      queue.clients.each do |client|
+        client.sum_wait_time
+      end
+    end
+    @cash_register.each do |cash|
+      cash.next_iteration
+    end
+  end
 
   protected
 
@@ -47,6 +55,9 @@ class Market
     @cash_register.each do |cash|
       if cash.client == nil
         cash.next_client
+        if cash.client != nil
+          @clients.push(cash.client)
+        end
       end
     end
   end
